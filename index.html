@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riego EcoCanarias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Riego Ecológico - Canarias</h1>
+        <p>Introduce los datos de tu cultivo para obtener una recomendación de riego.</p>
+
+        <form id="riegoForm">
+            <div class="form-group">
+                <label for="tipoPlanta">Tipo de Hortaliza:</label>
+                <select id="tipoPlanta" name="tipoPlanta" required>
+                    <option value="" disabled selected>Selecciona una hortaliza...</option>
+                    <!-- Opciones se cargarán con JS -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="epocaPlantacion">Época de Plantación:</label>
+                <select id="epocaPlantacion" name="epocaPlantacion" required>
+                    <option value="" disabled selected>Selecciona la época...</option>
+                    <option value="Primavera">Primavera</option>
+                    <option value="Verano">Verano</option>
+                    <option value="Otoño">Otoño</option>
+                    <option value="Invierno">Invierno</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tipoSuelo">Tipo de Suelo:</label>
+                <select id="tipoSuelo" name="tipoSuelo" required>
+                    <option value="" disabled selected>Selecciona el tipo de suelo...</option>
+                    <option value="Arenoso">Arenoso (drena rápido)</option>
+                    <option value="Franco">Franco (equilibrio)</option>
+                    <option value="Arcilloso">Arcilloso (retiene agua)</option>
+                    <option value="Franco-arenoso">Franco-arenoso</option>
+                    <option value="Franco-arcilloso">Franco-arcilloso</option>
+                </select>
+            </div>
+
+             <div class="form-group">
+                <label for="tipoClima">Clima Predominante en la Zona:</label>
+                <select id="tipoClima" name="tipoClima" required>
+                    <option value="" disabled selected>Selecciona el clima...</option>
+                    <option value="Costero/Seco">Costero / Seco y Cálido</option>
+                    <option value="Medianias/Templado">Medianías / Templado</option>
+                    <option value="Cumbre/FrioHumedo">Cumbre / Frío y Húmedo</option>
+                     <option value="Sur/Arido">Sur / Árido</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="isla">Isla:</label>
+                <select id="isla" name="isla" required>
+                    <option value="" disabled selected>Selecciona la isla...</option>
+                    <!-- Opciones se cargarán con JS -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="municipio">Municipio:</label>
+                <select id="municipio" name="municipio" required disabled>
+                    <option value="" disabled selected>Selecciona primero la isla...</option>
+                    <!-- Opciones se cargarán con JS dinámicamente -->
+                </select>
+            </div>
+
+            <button type="submit">Obtener Recomendación de Riego</button>
+        </form>
+
+        <div id="resultado" class="hidden">
+            <h2>Ficha de Riego Recomendado</h2>
+            <div id="datosSeleccionados">
+                <p><strong>Hortaliza:</strong> <span id="resPlanta"></span></p>
+                <p><strong>Época Plantación:</strong> <span id="resEpoca"></span></p>
+                <p><strong>Tipo de Suelo:</strong> <span id="resSuelo"></span></p>
+                <p><strong>Clima:</strong> <span id="resClima"></span></p>
+                <p><strong>Ubicación:</strong> <span id="resUbicacion"></span></p>
+            </div>
+            <div id="recomendacionRiego">
+                <h3>Estrategia de Riego Eficiente:</h3>
+                <p id="resEstrategia"></p>
+                <h3>Cuándo Regar:</h3>
+                <p id="resMomento"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
